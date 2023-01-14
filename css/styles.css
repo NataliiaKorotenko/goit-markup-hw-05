@@ -2,7 +2,7 @@
 --first-title-color: #FFFFFF;
 --second-title-color: #2E2F42;
 --text-color: #434455;
--o-transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+--transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 h1,
@@ -98,21 +98,22 @@ logo {
 }
 
 .header-link {
+    position: relative;
     font-family: 'Roboto';
     font-weight: 600;
     font-size: 16px;
     line-height: 1.5; 
     letter-spacing: 0.02em;
     color: #2E2F42;
-    transition: ;
+    transition: color var(--transition);
 }
 
-.header-link::after {
+.header-link.current::after {
     content: "";
     position: absolute;
     width: 100%;
     height: 4px;
-    background: #404BBF;
+    background-color: #404BBF;
     left: 0;
     bottom: -24px;
     border-radius: 2px;
@@ -124,10 +125,9 @@ logo {
     gap: 40px;
 }   
 
-
 .header-link:hover,
 .header-link:focus { 
-    color: #4D5AE5;;
+    color: #4D5AE5;
 }
 
 .visually-hidden {
@@ -150,8 +150,6 @@ logo {
     letter-spacing: 0.02em;
     color: #434455;
 }
-
-
 
 /*----Main----*/
 
@@ -190,10 +188,10 @@ logo {
     line-height: 1.9;
     letter-spacing: 0.04em;
     color: #FFFFFF;
-    background: #4D5AE5;
+    background-color: #4D5AE5;
     cursor: pointer;
     border: 1px dashed #9747FF;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1), background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    transition: background var(--transition), box-shadow var(--transition);
 }
 
 .main-btn:hover,
@@ -216,9 +214,8 @@ logo {
 .about-list {
     display: flex;
     flex-wrap: wrap;
-
-
 }
+
 .about-block {
     margin-bottom: 8px;
     display: flex;
@@ -236,6 +233,7 @@ logo {
     background: #F4F4FD;
     border-radius: 4px;
     color: #2E2F42;
+    transition: color var(--transition), border var(--transition);
 }
 
 .about-icon {
@@ -247,7 +245,6 @@ fill:currentColor;
     border: 1px solid #404BBF;
     color: #404BBF;
 }
-
 
 .about-title {
     font-family: 'Roboto';
@@ -271,6 +268,7 @@ fill:currentColor;
 .product {
     padding-bottom: 120px;
 } 
+
 .product-title {
     text-align: center;
     margin-bottom: 72px;
@@ -356,6 +354,7 @@ fill:currentColor;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background var(--transition);
 }
 
 .team-soc-link:hover,
@@ -396,6 +395,7 @@ fill:currentColor;
     background: #F4F4FD;
     cursor: pointer;
     border: 1px solid #E7E9FC;
+    transition: color var(--transition), background var(--transition), box-shadow var(--transition);
 }
 
 .filters-btn:hover,
@@ -434,6 +434,7 @@ fill:currentColor;
     position: relative;
     overflow: hidden;
 }
+
 .menu-overlay:hover .overlay,
 .menu-overlay:focus .overlay {
     transform: translateY(0);
@@ -511,6 +512,7 @@ color: var(--second-title-color);;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: color var(--transition);
 }
 
 .customers-icon {
@@ -602,6 +604,7 @@ margin-bottom: 16px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: background var(--transition);
 }
 
 .footer-soc-link:hover,
